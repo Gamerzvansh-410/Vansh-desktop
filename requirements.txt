@@ -1,0 +1,6 @@
+edge-tts
+playsound==1.2.2
+SpeechRecognition
+pyaudio
+fastapi
+uvicorn
