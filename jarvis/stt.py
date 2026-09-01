@@ -21,4 +21,3 @@ def listen(timeout: int = 5, phrase_time_limit: int = 8) -> str:
     except sr.RequestError:
         print("Check your internet connection -- Can't reach speeech recognition.")
         return ""
-    
