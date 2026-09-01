@@ -19,4 +19,3 @@ async def speak(text: str):
         playsound(_AUDIO_FILE)
     except Exception as e: 
         print(f"Error generating or playing audio please check your internet connection and the edge_tts library. Error: {e}")
-        

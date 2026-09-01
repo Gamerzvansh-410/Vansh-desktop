@@ -6,4 +6,3 @@ Every setting is here — Wake word, voice, language, and more. You can change t
 WAKE_WORD = "Vansh"       # Say this to activate 
 EDGE_VOICE = "en-US-GuyNeural"
 EDGE_RATE = "+0%"
-
