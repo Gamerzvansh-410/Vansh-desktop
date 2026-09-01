@@ -16,7 +16,7 @@ def listen(timeout: int = 5, phrase_time_limit: int = 8) -> str:
         text = _recognizer.recognize_google(audio, language="en-IN")
         print(f"You said: {text}")
         return text.lower()
-    except sr.UnknownvalueError:
+    except sr.UnknownValueError:
         return ""
     except sr.RequestError:
         print("Check your internet connection -- Can't reach speeech recognition.")
