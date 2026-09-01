@@ -7,25 +7,25 @@ from playsound import playsound
 
 from Vansh.config import EDGE_VOICE, EDGE_RATE
 
-
 _AUDIO_FILE = os.path.join(
-    tempfile.gettempdir(),
-    "Vansh_voice.mp3"
+tempfile.gettempdir(),
+"Vansh_voice.mp3"
 )
-
 
 async def _generate_audio(text: str):
     communicate = edge_tts.Communicate(
         text,
         voice=EDGE_VOICE,
         rate=EDGE_RATE
-    )
+    )   
 
-    await communicate.save(_AUDIO_FILE)
+
+await communicate.save(_AUDIO_FILE)
 
 
 def speak(text: str):
     print(f"Vansh: {text}")
+
 
     try:
         asyncio.run(_generate_audio(text))
@@ -36,3 +36,4 @@ def speak(text: str):
             "Error generating or playing audio. "
             f"Error: {e}"
         )
+

@@ -17,36 +17,36 @@ A Python voice assistant (Jarvis-style) for **Windows, macOS, and Linux**.
 
 ## Installation
 
-```bash
+bash
 git clone https://github.com/Gamerzvansh-410/Vansh-desktop.git
 cd Vansh-desktop
 python3 -m venv venv
 source venv/bin/activate    # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
+
 
 **Windows** — if `pyaudio` fails to install:
-```bash
+bash
 pip install pipwin
 pipwin install pyaudio
-```
+
 
 **macOS** — install portaudio first:
-```bash
+bash
 brew install portaudio
 pip install pyaudio
-```
+
 
 **Linux** — install portaudio first:
-```bash
+bash
 sudo apt install portaudio19-dev python3-pyaudio
-```
+
 
 ## Usage
 
-```bash
+bash
 python3 main.py
-```
+
 
 Say **"Vansh"** to activate, then speak your command (e.g. "tell time", "open youtube").
 
@@ -54,15 +54,15 @@ Say **"Vansh"** to activate, then speak your command (e.g. "tell time", "open yo
 
 Run the server on your PC to control Vansh from another device on the same network:
 
-```bash
+bash
 python3 server.py
-```
+
 
 Find your PC's local IP (`ipconfig` on Windows, `ifconfig` on macOS/Linux). From another device:
 
-```
+
 http://<PC-IP>:8000/command?text=your+command
-```
+
 
 ### iPhone (Siri Shortcuts)
 
@@ -75,14 +75,14 @@ http://<PC-IP>:8000/command?text=your+command
 ## Changing the Voice
 
 Edit `EDGE_VOICE` in `jarvis/config.py`. List all available voices:
-```bash
+bash
 edge-tts --list-voices
-```
+
 
 **Windows** — if `playsound` errors with "No module named 'win32com'":
-```bash
+bash
 pip install pywin32
-```
+
 
 ## Adding a New Skill
 
