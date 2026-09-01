@@ -1,1 +1,13 @@
-
+name: base
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10              # Conda package
+  - numpy                    # Conda package
+  - pip                      # Conda package (installs pip itself)
+  - pip:                     # Pip dependencies section
+    - requests               # Pip package
+    - flask==2.0.0          # Pip package with specific version
+    - pytest-cov            # Pip package
+    
