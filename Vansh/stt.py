@@ -18,22 +18,22 @@ def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
     except sr.WaitTimeoutError:
         return ""
 
-try:
-    text = _recognizer.recognize_google(
-        audio,
-        language="en-IN"
-    )
+    try:
+        text = _recognizer.recognize_google(
+            audio,
+            language="en-IN"
+        )
 
-    print(f"You said: {repr(text)}")
-    return text.lower()
+        print(f"You said: {repr(text)}")
+        return text.lower()
 
-except sr.UnknownValueError:
-    return ""
+    except sr.UnknownValueError:
+        return ""
 
-except sr.RequestError:
-    print(
-        "Check your internet connection. "
-        "Can't reach speech recognition."
-    )
-    return ""
+    except sr.RequestError:
+        print(
+            "Check your internet connection. "
+            "Can't reach speech recognition."
+        )
+        return ""
 
