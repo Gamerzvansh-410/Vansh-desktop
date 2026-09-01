@@ -5,23 +5,23 @@ from jarvis.skills import handle_command
 
 
 def main():
-    speak(f"Ashborn online hai. '{WAKE_WORD}' bolke mujhe bulao.")
+    speak(f"Ashborn is online say '{WAKE_WORD}' to give me command.")
 
     while True:
         text = listen(timeout=None, phrase_time_limit=3)
 
         if WAKE_WORD in text:
-            speak("Ji boliye")
+            speak("how can i help you!")
             command_text = listen(timeout=5, phrase_time_limit=8)
 
             if not command_text:
-                speak("Kuch sunayi nahi diya, dobara try karo")
+                speak("Can't hear you, please try. again")
                 continue
 
             response = handle_command(command_text)
 
             if response == "__EXIT__":
-                speak("Theek hai, milte hain!")
+                speak("okay, see yaa!")
                 break
 
             speak(response)

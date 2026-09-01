@@ -9,13 +9,13 @@ app = FastAPI(title="Jarvis Remote API")
 def run_command(text: str):
     reply = handle_command(text)
     if reply == "__EXIT__":
-        reply = "Theek hai, bye!"
+        reply = "Okay, bye!"
     return {"reply": reply}
 
 
 @app.get("/")
 def health_check():
-    return {"status": "Jarvis online hai"}
+    return {"status": "Jarvis is online"}
 
 
 if __name__ == "__main__":
