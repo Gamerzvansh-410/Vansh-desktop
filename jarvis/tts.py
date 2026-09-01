@@ -3,9 +3,9 @@ import os
 import tempfile
 import edge_tts
 from playsound import playsound
-from jarvis.config import EDGE_VOICE, EDGE_RATE
+from Vansh.config import EDGE_VOICE, EDGE_RATE
  
-_AUDIO_FILE = os.path.join(tempfile.gettempdir(),"jarvis_voice.mp3")
+_AUDIO_FILE = os.path.join(tempfile.gettempdir(),"Vansh_voice.mp3")
 
 async def _generate_audio(text: str):
     communicate = edge_tts.Communicate(text, voice=EDGE_VOICE, rate=EDGE_RATE)
@@ -13,7 +13,7 @@ async def _generate_audio(text: str):
 
 
 async def speak(text: str):
-    print(f"jarvis: {text}")
+    print(f"Vansh: {text}")
     try:
         asyncio.run(_generate_audio(text))
         playsound(_AUDIO_FILE)

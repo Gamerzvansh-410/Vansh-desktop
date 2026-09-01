@@ -1,7 +1,7 @@
-from jarvis.config import WAKE_WORD
-from jarvis.stt import listen
-from jarvis.tts import speak
-from jarvis.skills import handle_command
+from Vansh.config import WAKE_WORD
+from Vansh.stt import listen
+from Vansh.tts import speak
+from Vansh.skills import handle_command
 
 
 def main():

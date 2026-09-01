@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from jarvis.skills import handle_command
+from Vansh.skills import handle_command
 import uvicorn
 
-app = FastAPI(title="Jarvis Remote API")
+app = FastAPI(title="Vansh Remote API")
 
 
 @app.get("/command")
@@ -15,7 +15,7 @@ def run_command(text: str):
 
 @app.get("/")
 def health_check():
-    return {"status": "Jarvis is online"}
+    return {"status": "Vansh is online"}
 
 
 if __name__ == "__main__":
