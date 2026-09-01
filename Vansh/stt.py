@@ -1,14 +1,19 @@
 import speech_recognition as sr
+import time
 
 _recognizer = sr.Recognizer()
 
 
 def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
+
+    # Give the speaker/audio system time to settle.
+    time.sleep(0.3)
+
     with sr.Microphone() as source:
 
         _recognizer.adjust_for_ambient_noise(
             source,
-            duration=0.5
+            duration=0.3
         )
 
         print("Listening...")
@@ -23,17 +28,20 @@ def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
         except sr.WaitTimeoutError:
             return ""
 
-        try:
-            text = _recognizer.recognize_google(
-                audio,
-                language="en-IN"
-            )
+    # Microphone is now completely released.
+    time.sleep(0.2)
 
-            return text.lower().strip()
+    try:
+        text = _recognizer.recognize_google(
+            audio,
+            language="en-IN"
+        )
 
-        except sr.UnknownValueError:
-            return ""
+        return text.lower().strip()
 
-        except sr.RequestError:
-            print("Speech recognition service unavailable.")
-            return ""
+    except sr.UnknownValueError:
+        return ""
+
+    except sr.RequestError:
+        print("Speech recognition service unavailable.")
+        return ""
