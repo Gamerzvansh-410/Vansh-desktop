@@ -3,7 +3,7 @@ Jarvis Configuration
 --------------------
 Every setting is here — Wake word, voice, language, and more. You can change these settings to customize your Jarvis experience.
 """
-WAKE_WORD = "Ashborn"       # Say this to activate 
+WAKE_WORD = "Vansh"       # Say this to activate 
 EDGE_VOICE = "en-US-GuyNeural"
 EDGE_RATE = "+0%"
 
