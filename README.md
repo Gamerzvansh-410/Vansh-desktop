@@ -1,10 +1,10 @@
-# Ashborn
+# Vansh
 
 A Python voice assistant (Jarvis-style) for **Windows, macOS, and Linux**.
 
 ## Features
 
-- Wake word activation ("ashborn")
+- Wake word activation ("Vansh")
 - Voice commands — time, date, open websites/apps
 - Remote control via REST API (control from any device on your network)
 - Natural-sounding voice replies (Edge TTS)
@@ -18,8 +18,8 @@ A Python voice assistant (Jarvis-style) for **Windows, macOS, and Linux**.
 ## Installation
 
 ```bash
-git clone https://github.com/Gamerzvansh-410/ASHBORN.git
-cd ASHBORN
+git clone https://github.com/Gamerzvansh-410/Vansh-desktop.git
+cd Vansh-desktop
 python3 -m venv venv
 source venv/bin/activate    # Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -48,11 +48,11 @@ sudo apt install portaudio19-dev python3-pyaudio
 python3 main.py
 ```
 
-Say **"ashborn"** to activate, then speak your command (e.g. "time batao", "open youtube").
+Say **"Vansh"** to activate, then speak your command (e.g. "tell time", "open youtube").
 
 ## Remote Control
 
-Run the server on your PC to control Ashborn from another device on the same network:
+Run the server on your PC to control Vansh from another device on the same network:
 
 ```bash
 python3 server.py
@@ -87,10 +87,6 @@ pip install pywin32
 ## Adding a New Skill
 
 Add a function in `jarvis/skills.py`, then map it inside `handle_command()`.
-
-## License
-
-This project is **proprietary**. Usage, modification, or distribution requires permission from the author — see [LICENSE](LICENSE) for terms.
 
 ## Notes
 

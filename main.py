@@ -5,7 +5,7 @@ from Vansh.skills import handle_command
 
 
 def main():
-    speak(f"Ashborn is online say '{WAKE_WORD}' to give me command.")
+    speak(f"Vansh is online say '{WAKE_WORD}' to give me command.")
 
     while True:
         text = listen(timeout=None, phrase_time_limit=3)
