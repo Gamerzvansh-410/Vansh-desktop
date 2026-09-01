@@ -6,34 +6,34 @@ def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
     with sr.Microphone() as source:
         _recognizer.adjust_for_ambient_noise(source, duration=0.5)
 
-    print("I'm listening...")
+        print("I'm listening...")
 
-    try:
-        audio = _recognizer.listen(
-            source,
-            timeout=timeout,
-            phrase_time_limit=phrase_time_limit
-        )
+        try:
+            audio = _recognizer.listen(
+                source,
+                timeout=timeout,
+                phrase_time_limit=phrase_time_limit
+            )
 
-    except sr.WaitTimeoutError:
-        return ""
+        except sr.WaitTimeoutError:
+            return ""
 
-    try:
-        text = _recognizer.recognize_google(
-            audio,
-            language="en-IN"
-        )
+        try:
+            text = _recognizer.recognize_google(
+                audio,
+                language="en-IN"
+            )
 
-        print(f"You said: {repr(text)}")
-        return text.lower()
+            print(f"You said: {repr(text)}")
+            return text.lower()
 
-    except sr.UnknownValueError:
-        return ""
+        except sr.UnknownValueError:
+            return ""
 
-    except sr.RequestError:
-        print(
-            "Check your internet connection. "
-            "Can't reach speech recognition."
-        )
-        return ""
+        except sr.RequestError:
+            print(
+                "Check your internet connection. "
+                "Can't reach speech recognition."
+            )
+            return ""
 

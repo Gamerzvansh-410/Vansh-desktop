@@ -57,5 +57,5 @@ while True:
         speak(response)
 
 
-if name == "main":
+if __name__ == "__main__":
     main()

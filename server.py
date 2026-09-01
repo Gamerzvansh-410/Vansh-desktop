@@ -13,7 +13,7 @@ def home():
 def command(text: str):
     response = handle_command(text)
 
-return {
-    "command": text,
-    "response": response
-}
+    return {
+        "command": text,
+        "response": response
+    }

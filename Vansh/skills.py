@@ -14,10 +14,10 @@ def tell_date() -> str:
 
 def open_website(site: str) -> str:
     urls={
-        "youtube":"www.youtube.com",
-        "google":"www.google.com",
-        "gmail":"www.mail.google.com",
-        "whatsapp":"web.whatsapp.com",
+        "youtube":"https://www.youtube.com",
+        "google":"https://www.google.com",
+        "gmail":"https://www.mail.google.com",
+        "whatsapp":"https://web.whatsapp.com",
     }
 
     url = urls.get(site)
@@ -32,7 +32,7 @@ def open_app(app_name: str) -> str:
         if system =="windows":
             subprocess.Popen(f"start {app_name}", shell =True)
         elif system == "Darwin":
-            subprocess.Popen(["open","a", app_name])
+            subprocess.Popen(["open","-a", app_name])
         else:
             subprocess.Popen([app_name])
         return f"{app_name} opening"

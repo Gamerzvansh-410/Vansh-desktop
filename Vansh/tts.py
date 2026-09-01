@@ -20,7 +20,7 @@ async def _generate_audio(text: str):
     )   
 
 
-await communicate.save(_AUDIO_FILE)
+    await communicate.save(_AUDIO_FILE)
 
 
 def speak(text: str):
