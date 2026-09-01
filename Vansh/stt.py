@@ -2,11 +2,16 @@ import speech_recognition as sr
 
 _recognizer = sr.Recognizer()
 
+
 def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
     with sr.Microphone() as source:
-        _recognizer.adjust_for_ambient_noise(source, duration=0.5)
 
-        print("I'm listening...")
+        _recognizer.adjust_for_ambient_noise(
+            source,
+            duration=0.5
+        )
+
+        print("Listening...")
 
         try:
             audio = _recognizer.listen(
@@ -24,16 +29,11 @@ def listen(timeout: int | None = 5, phrase_time_limit: int = 8) -> str:
                 language="en-IN"
             )
 
-            print(f"You said: {repr(text)}")
-            return text.lower()
+            return text.lower().strip()
 
         except sr.UnknownValueError:
             return ""
 
         except sr.RequestError:
-            print(
-                "Check your internet connection. "
-                "Can't reach speech recognition."
-            )
+            print("Speech recognition service unavailable.")
             return ""
-
